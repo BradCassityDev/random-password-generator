@@ -3,7 +3,8 @@ var generatePassword = function() {
   // establishing allowed character arrays
   const lowerCaseLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   const uppderCaseLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-  const numericValues = [0,1,2,3,4,5,6,7,8,9];
+  //Added duplicates of numeric values to even chances of being selected in concatinated array
+  const numericValues = [0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9]; 
   const specialChars = ['!','"','#','$','&','%','^',"'",'(',')','*','+','-','.','<','>','?','/','[',']','{','}','|','~','_'];
   var includedCharacters = [];
   var generatedPass = '';
@@ -17,32 +18,38 @@ var generatePassword = function() {
 
   // Include Lowercase?
   var includeLower = window.confirm("Would you like lowercase characters to be included?");
-  if(includeLower) {includedCharacters = includedCharacters.concat(lowerCaseLetters);}
+  if(includeLower) {
+    includedCharacters = includedCharacters.concat(lowerCaseLetters);
+  }
   
   // Include Uppercase?
   var includeUpper = window.confirm("Would you like uppercase characters to be included?");
-  if(includeUpper) {includedCharacters = includedCharacters.concat(uppderCaseLetters);}
+  if(includeUpper) {
+    includedCharacters = includedCharacters.concat(uppderCaseLetters);
+  }
 
   // Include Numeric?
   var includeNumeric = window.confirm("Would you like numeric values to be included?");
-  if(includeNumeric) {includedCharacters = includedCharacters.concat(numericValues);}
+  if(includeNumeric) {
+    includedCharacters = includedCharacters.concat(numericValues);
+  }
 
   // Include Special Characters? 
   var includeSpecial = window.confirm("Would you like special characters to be included?");
-  if(includeSpecial) {includedCharacters = includedCharacters.concat(specialChars);}
+  if(includeSpecial) {
+    includedCharacters = includedCharacters.concat(specialChars);
+  }
 
-  console.log(includedCharacters);
   console.log(includedCharacters.length);
-
+  console.log(includedCharacters);
+  
   // Check if user selected at least one character type
   if(includeLower || includeUpper || includeNumeric || includeSpecial) {
     // Loop through and assign values to string
     for(var i = 0; i < passLength; i++) {
         // get random number out of the total includedCharacters total as highest value
-        var num = Math.floor(Math.random() * includedCharacters.length + 1);
         var selectedChar = includedCharacters[Math.floor(Math.random() * includedCharacters.length)];
         generatedPass = generatedPass + selectedChar; 
-        console.log(num);
     }
 
     // return the generated password
