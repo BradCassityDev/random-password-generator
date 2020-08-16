@@ -18,15 +18,3 @@ GitHub Published Site: https://bradcassitydev.github.io/random-password-generato
 
 ## Screenshots of steps:
 ![Working Project Screenshot](/GeneratedPass.PNG)
-
-Include Lowercase Character Prompt
-![Working Project Screenshot](/incLower.PNG)
-
-Include Uppercase Character Prompt
-![Working Project Screenshot](/incUpper.PNG)
-
-Include Numeric Character Prompt
-![Working Project Screenshot](/incNumbers.PNG)
-
-Include Special Character Prompt
-![Working Project Screenshot](/incSpecial.PNG)
