@@ -39,9 +39,6 @@ var generatePassword = function() {
   if(includeSpecial) {
     includedCharacters = includedCharacters.concat(specialChars);
   }
-
-  console.log(includedCharacters.length);
-  console.log(includedCharacters);
   
   // Check if user selected at least one character type
   if(includeLower || includeUpper || includeNumeric || includeSpecial) {
