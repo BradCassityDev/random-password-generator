@@ -9,7 +9,30 @@ var generatePassword = function() {
   var generatedPass = '';
   var passLength = 0;
   
+  // Password Length
+  while(isNaN(passLength) || passLength < 8 || passLength > 128) {
+    passLength = parseInt(window.prompt("What length would you like the password to be? Must be between 8 and 128 characters."));
+  }
+
+  // Include Lowercase?
+  var includeLower = window.confirm("Would you like lowercase characters to be included?");
+  if(includeLower) {includedCharacters = includedCharacters.concat(lowerCaseLetters);}
   
+  // Include Uppercase?
+  var includeUpper = window.confirm("Would you like uppercase characters to be included?");
+  if(includeUpper) {includedCharacters = includedCharacters.concat(uppderCaseLetters);}
+
+  // Include Numeric?
+  var includeNumeric = window.confirm("Would you like numeric values to be included?");
+  if(includeNumeric) {includedCharacters = includedCharacters.concat(numericValues);}
+
+  // Include Special Characters? 
+  var includeSpecial = window.confirm("Would you like special characters to be included?");
+  if(includeSpecial) {includedCharacters = includedCharacters.concat(specialChars);}
+
+ 
+
+
   // return the generated password
   return generatedPass;
 }
